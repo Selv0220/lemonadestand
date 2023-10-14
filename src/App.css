@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+
+.Navbar{
+  background: linear-gradient(to right, rgb(237, 222, 5), rgb(226, 102, 40))
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gradient_background{
+  background: linear-gradient(to right, rgb(237, 222, 5), rgb(226, 102, 40));
+  height: 190px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cart-quantity{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.m-2 video{
+  text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer{
+  background: linear-gradient(to right, rgb(237, 222, 5), rgb(226, 102, 40));
+  margin-top: end;
+}
+
+.Copy{
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
