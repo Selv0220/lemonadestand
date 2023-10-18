@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import {
   MDBContainer,
   MDBNavbar,
@@ -7,17 +6,11 @@ import {
   MDBBadge,
 } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCartTotal } from '../features/cartSlice';
+import { useSelector } from 'react-redux';
 
 export default function App() {
 
-  const {cart, totalQuantity} = useSelector((state) => state.allCart);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCartTotal());
-  }, [cart])
+  const {totalQuantity} = useSelector((state) => state.cart);
 
   return (
     <MDBNavbar className='Navbar'>
@@ -25,6 +18,9 @@ export default function App() {
             <MDBNavbarBrand className='text-white fw-light fa-regular fa-lemon'> Lemo </MDBNavbarBrand>
                 <span>
                   <Link className='Home text-white fw-light fa-regular' to="/">Home</Link>
+                  </span>
+                  <span>
+                    <Link className='Products text-white fw-light fa-regular' to="/products">Products</Link>
                   </span>
                 <MDBBtn color="linear-gradient(to right, rgb(237, 222, 5), rgb(226, 102, 40))">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16" color='yellow'>

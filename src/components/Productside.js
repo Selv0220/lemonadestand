@@ -15,45 +15,21 @@ import {
 } from 'mdb-react-ui-kit';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/cartSlice';
-import {MDBTypography} from 'mdb-react-ui-kit';
-import Video from "../assets/Lemon.mov";
 
 export default function App() {
-    const {items} = useSelector(state => state.products)
+    const {items, status} = useSelector(state => state.products);
     const dispatch = useDispatch();
-    
-    
 
     const handleAddToCart =(product) => {
       dispatch(addToCart(product));
+      /*history.push("/cart");*/
     };
 
 return (
 
 <div className="m-2">
-    <video className="img-fluid rounded" autoPlay loop muted>
-      <source
-      src={Video}
-      type="video/mp4"
-      />
-    </video>
-    
-    <figure className='gradient_background text-center mb-5 text-dark rounded'>
-      <MDBTypography blockquote> <br></br>
-        <h2 className='fw-light fa-regular'>DID YOU KNOW?</h2>
-      </MDBTypography>
-      
-      <figcaption className='blockquote-footer mb-0 text-dark'> Lemonade boosts the immune system
-                    Not only does it provide us with our daily source of Vitamin C,
-                    <br></br> but the benefits of lemonade are also seen in its antioxidizing qualities.
-                    Lemons provide antioxidants, keeping us healthy and able to battle sickness.
-        <br></br>
-        <cite title='Source Title'>As a bonus, antioxidants also help keep our skin fresh!</cite>
-      </figcaption>
-    </figure>
-    
     <MDBContainer>
-      <MDBRow className="mb-3">
+       <MDBRow className="mb-3">
         {items.map((product) => (
         <MDBCol key={product.id} size="md">
           <MDBCard>
@@ -67,7 +43,7 @@ return (
               <MDBCardBody>
                 <MDBCardTitle>{product.title}</MDBCardTitle>
                 <MDBCardText>${product.price}</MDBCardText>
-                <MDBBtn type="button" class ="btn btn-outline-success" onClick={() => handleAddToCart(product)}>
+                <MDBBtn  onClick={() => handleAddToCart(product)} type="button" class ="btn btn-outline-success">
                         Add
                 </MDBBtn>
               </MDBCardBody>

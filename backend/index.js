@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Welcome to our online API...");
+  res.send("Welcome to online shop API...");
 });
 
 app.get("/products", (req, res) => {
-    res.send(products);
+  res.send(products);
 });
 
 const port = process.env.PORT || 5000;
